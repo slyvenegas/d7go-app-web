@@ -1,10 +1,6 @@
-# AI Agent Landing Page
+# D7GO APP
 
-![Demo](public/screenshot.jpeg)
-
-A modern, production-ready landing page template for AI and SaaS products. Built with Astro and Tailwind CSS.
-
-## Features
+## Tecnologías
 
 - ⚡️ **Astro 5** - Fast, static site generation
 - 🎨 **Tailwind CSS 4** - Modern styling with CSS-first config
@@ -13,19 +9,6 @@ A modern, production-ready landing page template for AI and SaaS products. Built
 - 🎭 **Smooth Animations** - Scroll-triggered effects
 - 🎯 **SEO Ready** - Meta tags & Open Graph
 - 🧩 **Modular Components** - Easy to customize
-
-## Sections
-
-- Hero with stats
-- Features grid (9 cards)
-- How it works (4 steps)
-- Testimonials (6 with company logos)
-- Pricing tiers (3 plans)
-- FAQ accordion (6 questions)
-- Contact form
-- Footer
-
-## Quick Start
 
 ```bash
 # Install dependencies
