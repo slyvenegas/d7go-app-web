@@ -1,4 +1,14 @@
-# D7GO APP
+## Sobre D7GO App
+
+D7GO App es una aplicación que permite la negociación directa entre pasajero y conductor para acordar el precio del servicio. Este repositorio contiene la interfaz pública (landing) construida con Astro, componentes modulares y archivos de configuración que representan la experiencia del producto (páginas informativas, secciones de características, precios y contacto).
+
+Este proyecto se usa principalmente como demo/landing y como base visual para la futura implementación de funcionalidades back-end (registro de usuarios, emparejamiento de viajes, y sistema de negociación de tarifas).
+
+### Objetivos principales
+
+- Presentar la propuesta de valor de D7GO App (viajes seguros, precios negociables, y servicios adicionales como envíos y fletes).
+- Proveer componentes reutilizables para la UI (hero, features, pricing, FAQ, contacto).
+- Servir como referencia para una implementación posterior del flujo de negocio tipo InDrive.
 
 ## Tecnologías
 
@@ -39,6 +49,7 @@ Works on Replit, Vercel, Netlify, and GitHub Pages.
 
 [MIT](LICENSE)
 
+<<<<<<< HEAD
 ## Sobre D7GO App
 
 D7GO App es una aplicación que permite la negociación directa entre pasajero y conductor para acordar el precio del servicio. Este repositorio contiene la interfaz pública (landing) construida con Astro, componentes modulares y archivos de configuración que representan la experiencia del producto (páginas informativas, secciones de características, precios y contacto).
@@ -51,6 +62,8 @@ Este proyecto se usa principalmente como demo/landing y como base visual para la
 - Proveer componentes reutilizables para la UI (hero, features, pricing, FAQ, contacto).
 - Servir como referencia para una implementación posterior del flujo de negocio tipo InDrive.
 
+=======
+>>>>>>> ce580b0b9096e5279ca3ded66e5c7350b46dba02
 ## Qué hay en este repositorio
 
 - Landing / sitio estático construido con Astro 5.
