@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../config.ts';
+import { Icon } from 'astro-icon/components'; 
 ---
 
 <section
@@ -24,12 +25,14 @@ import { siteConfig } from '../config.ts';
       <div
         class="scroll-fade-up mb-16 flex flex-col justify-center gap-4 sm:flex-row"
       >
-        <a
-          href={siteConfig.hero.cta.primary.href}
+        {/* --- 2. BOTÓN CTA MODIFICADO --- */}
+        <button
+          id="openModalButtonHero"
+          type="button"
           class="bg-mono-black rounded-lg px-8 py-4 font-semibold text-white shadow-lg"
         >
           {siteConfig.hero.cta.primary.text}
-        </a>
+        </button>
         <a
           href={siteConfig.hero.cta.secondary.href}
           class="border-mono-black text-mono-black rounded-lg border-2 bg-white px-8 py-4 font-semibold"
@@ -57,3 +60,95 @@ import { siteConfig } from '../config.ts';
     </div>
   </div>
 </section>
+
+{/* --- 3. HTML Y SCRIPT DEL MODAL (Independiente) --- */}
+
+<div
+  id="modalOverlayHero"
+  class="fixed inset-0 z-[55] hidden bg-black/60 backdrop-blur-sm"
+  aria-hidden="true"
+>
+</div>
+
+<div
+  id="qrModalHero"
+  class="fixed z-[60] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden w-full max-w-md transform rounded-2xl bg-white p-8 shadow-2xl"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <button
+    id="closeModalButtonHero"
+    class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+    aria-label="Cerrar modal"
+  >
+    <Icon name="heroicons:x-mark" class="h-6 w-6" />
+  </button>
+
+  <div class="flex flex-col items-center text-center">
+    <div class="mb-4 flex items-center space-x-3">
+      <img
+        class="h-12 w-12"
+        src="https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763148433/logo1_guhvc9.png"
+        alt="Logo D7GO"
+      />
+      <div>
+        <p class="text-left text-sm font-semibold text-gray-900">App D7GO</p>
+        <p class="text-left text-xs text-yellow-500">★★★★★</p>
+      </div>
+    </div>
+
+    <h2 class="mb-4 text-2xl font-bold text-gray-900">
+      Apunta la cámara de tu teléfono al código QR
+    </h2>
+    
+    <img
+      src="https://URL_DE_TU_QR.png"
+      alt="Código QR para descargar la app"
+      class="h-64 w-64 rounded-lg border"
+    />
+
+    <p class="mt-4 text-sm text-gray-600">
+      Escanea el código QR con la cámara de tu teléfono para descargar la app
+      D7GO.
+    </p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // IDs únicos para este componente "Hero"
+    const openModalButton = document.getElementById('openModalButtonHero');
+    const closeModalButton = document.getElementById('closeModalButtonHero');
+    const modalOverlay = document.getElementById('modalOverlayHero');
+    const qrModal = document.getElementById('qrModalHero');
+
+    const openModal = () => {
+      if (qrModal && modalOverlay) {
+        qrModal.classList.remove('hidden');
+        modalOverlay.classList.remove('hidden');
+        qrModal.setAttribute('aria-hidden', 'false');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+      }
+    };
+
+    const closeModal = () => {
+      if (qrModal && modalOverlay) {
+        qrModal.classList.add('hidden');
+        modalOverlay.classList.add('hidden');
+        qrModal.setAttribute('aria-hidden', 'true');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+      }
+    };
+
+    if (openModalButton) {
+      openModalButton.addEventListener('click', openModal);
+    }
+    if (closeModalButton) {
+      closeModalButton.addEventListener('click', closeModal);
+    }
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', closeModal);
+    }
+  });
+</script>

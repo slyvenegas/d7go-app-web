@@ -3,14 +3,27 @@ import { siteConfig } from '../config.ts';
 import { Icon } from 'astro-icon/components';
 ---
 
-<section id="contact" class="bg-mono-lighter px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-7xl">
+<section
+  id="contact"
+  class="bg-mono-lighter relative px-4 py-20 sm:px-6 lg:px-8" {/* Se añadió 'relative' */}
+  style="
+    background-image: url('https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763154483/Gemini_Generated_Image_oadm76oadm76oadm_fd95kk.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  "
+>
+  {/* Capa de superposición oscura para legibilidad */}
+  <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+
+  <div class="mx-auto max-w-7xl relative z-10"> {/* 'relative z-10' para que el contenido esté por encima */}
     <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
       <div class="scroll-fade-left">
-        <h2 class="text-mono-black mb-6 text-4xl font-bold sm:text-5xl">
+        {/* --- Colores de texto cambiados a blanco/claro --- */}
+        <h2 class="text-white mb-6 text-4xl font-bold sm:text-5xl">
           {siteConfig.contact.title}
         </h2>
-        <p class="text-mono-dark mb-8 text-xl leading-relaxed">
+        <p class="text-mono-light mb-8 text-xl leading-relaxed">
           {siteConfig.contact.subtitle}
         </p>
 
@@ -20,25 +33,26 @@ import { Icon } from 'astro-icon/components';
               <li class="flex items-center">
                 <Icon
                   name="heroicons:check"
-                  class="text-mono-black mr-4 h-6 w-6 flex-shrink-0"
+                  class="text-white mr-4 h-6 w-6 flex-shrink-0"
                 />
-                <span class="text-mono-dark">{benefit}</span>
+                <span class="text-mono-light">{benefit}</span>
               </li>
             ))
           }
         </ul>
 
-        <div class="border-mono-light border-t pt-8">
-          <p class="text-mono-gray mb-4 text-sm">
+        <div class="border-white/30 border-t pt-8"> {/* Borde aclarado */}
+          <p class="text-mono-light mb-4 text-sm">
             ¿Tienes alguna pregunta? Escribe a nuestro equipo de soporte:
           </p>
           <a
             href={`mailto:${siteConfig.contact.email}`}
-            class="text-mono-black font-semibold">{siteConfig.contact.email}</a
+            class="text-white font-semibold">{siteConfig.contact.email}</a
           >
         </div>
       </div>
 
+      {/* --- Esta tarjeta de formulario 'bg-white' no necesita cambios --- */}
       <div
         class="scroll-fade-right border-mono-lighter rounded-xl border bg-white p-8 shadow-lg"
       >

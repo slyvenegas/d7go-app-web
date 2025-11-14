@@ -10,6 +10,7 @@ import Pricing from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import Image from 'astro/components/Image.astro';
 ---
 
 <!doctype html>
@@ -57,6 +58,8 @@ import Footer from '../components/Footer.astro';
     <Contact />
     <Footer />
 
+    <div class="background-image fixed inset-0 -z-10"></div>
+
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const observerOptions = {
@@ -76,5 +79,14 @@ import Footer from '../components/Footer.astro';
         scrollFadeElements.forEach((el) => observer.observe(el));
       });
     </script>
+
+    <style>
+      .background-image {
+        background-image: url('https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763154178/Gemini_Generated_Image_4ddkiv4ddkiv4ddk_yksspn.png');
+        background-size: cover ;
+        background-position: center;
+        opacity: 0.8;
+      }
+    </style>
   </body>
 </html>

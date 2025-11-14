@@ -13,7 +13,7 @@ export const siteConfig = {
       'D7GO App conecta pasajeros y conductores para ofrecer viajes seguros, cómodos y a precios justos. ¡Descarga la app y comienza tu viaje hoy mismo!',
     keywords:
       'app de transporte, viajes seguros, conductores confiables, pasajeros satisfechos, D7GO, envíos, fletes, comida a domicilio',
-    email: 'hello@aiagentplatform.com',
+    email: 'soporte@d7gollc.com',
 
     // Open Graph / Twitter
     ogTitle: 'D7GO App',
@@ -23,6 +23,12 @@ export const siteConfig = {
     twitterTitle: 'D7GO App',
     twitterDescription: 'App de Transporte D7GO - Viajes Seguros y Confiables',
   },
+
+
+  // ============================================
+  // CARROUSEL IMAGES
+  // ============================================
+
 
   // ============================================
   // NAVIGATION
@@ -117,10 +123,10 @@ export const siteConfig = {
       'Escoge el plan que mejor se adapte a tus necesidades y comienza a disfrutar de viajes seguros y cómodos con D7GO App.',
     plans: [
       {
-        name: 'Gratuito',
+        name: 'D7GO Pasajero',
         price: '$0 COP',
         period: '/mes',
-        description: 'Perfecto para observar y comenzar',
+        description: 'Perfecto para viajes y envíos.',
         features: [
           'Datos en tiempo real',
           '+1,000 autos disponibles/día',
@@ -134,9 +140,9 @@ export const siteConfig = {
         featured: false,
       },
       {
-        name: 'Pro (Sólo conductores)',
-        price: '$349,000 COP',
-        period: '/mes',
+        name: 'D7GO Conductor',
+        // price: '$349,000 COP',
+        // period: '/mes',
         description: 'Crece siendo partner de D7GO',
         badge: 'SÓLO PARA CONDUCTORES',
         features: [
@@ -148,30 +154,30 @@ export const siteConfig = {
           'Paga mediante transferencia bancaria',
         ],
         cta: {
-          text: 'Contacta un Asesor',
+          text: 'Descarga tu App',
           href: '#contact',
         },
         featured: true,
       },
-      {
-        name: 'Empresas',
-        price: 'Personalizado /mes',
-        period: '',
-        description: 'Para operaciones a gran escala y necesidades empresariales personalizadas',
-        features: [
-          'Entregas a tu precio',
-          'Recogida rápida',
-          'Repartidores confiables',
-          'Seguro incluido para cada envío',
-          'Envía hasta a 3 direcciones con un solo repartidor',
-          'Seguimiento en tiempo real',
-        ],
-        cta: {
-          text: '¡Cotiza!',
-          href: '#contact',
-        },
-        featured: false,
-      },
+      // {
+      //   name: 'Empresas',
+      //   price: 'Personalizado /mes',
+      //   period: '',
+      //   description: 'Para operaciones a gran escala y necesidades empresariales personalizadas',
+      //   features: [
+      //     'Entregas a tu precio',
+      //     'Recogida rápida',
+      //     'Repartidores confiables',
+      //     'Seguro incluido para cada envío',
+      //     'Envía hasta a 3 direcciones con un solo repartidor',
+      //     'Seguimiento en tiempo real',
+      //   ],
+      //   cta: {
+      //     text: '¡Cotiza!',
+      //     href: '#contact',
+      //   },
+      //   featured: false,
+      // },
     ],
   },
 

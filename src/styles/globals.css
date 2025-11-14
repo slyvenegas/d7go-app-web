@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-mono-black: #000000;
+  --color-mono-black: hsl(210.51deg 96.72% 11.96%);
   --color-mono-darker: #171717;
-  --color-mono-dark: #404040;
+  --color-mono-dark: #hsl(210.51deg 92.53% 22.57%);
   --color-mono-gray: #737373;
   --color-mono-light: #a3a3a3;
   --color-mono-lighter: #e5e5e5;

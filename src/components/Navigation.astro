@@ -9,9 +9,13 @@ import { Icon } from 'astro-icon/components';
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
       <div class="flex items-center">
-        <a href="/" class="text-mono-black text-xl font-bold"
-          ><img class="h" src="./vecto.png" alt=""></a
-        >
+        <a href="/" class="text-mono-black text-xl font-bold">
+          <img
+            class="h-15 w-auto"
+            src="https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763148433/logo1_guhvc9.png"
+            alt=""
+          />
+        </a>
       </div>
 
       <div class="hidden items-center space-x-8 md:flex">
@@ -22,12 +26,14 @@ import { Icon } from 'astro-icon/components';
             </a>
           ))
         }
-        <a
-          href={siteConfig.navigation.cta.href}
+        
+        {/* --- 1. BOTÓN DE ESCRITORIO MODIFICADO --- */}
+        <button
+          id="openModalButton"
           class="bg-mono-black rounded-lg px-6 py-2 text-white"
         >
           {siteConfig.navigation.cta.text}
-        </a>
+        </button>
       </div>
 
       <button
@@ -50,19 +56,76 @@ import { Icon } from 'astro-icon/components';
             </a>
           ))
         }
-        <a
-          href={siteConfig.navigation.cta.href}
+
+        {/* --- 2. BOTÓN MÓVIL MODIFICADO --- */}
+        <button
+          id="openModalButtonMobile"
           class="bg-mono-black rounded-lg px-6 py-3 text-center text-white"
         >
           {siteConfig.navigation.cta.text}
-        </a>
+        </button>
       </div>
     </div>
   </div>
 </nav>
 
+{/* --- 3. HTML PARA EL MODAL (Añadido) --- */}
+<div
+  id="modalOverlay"
+  class="fixed inset-0 z-[55] hidden bg-black/60 backdrop-blur-sm"
+  aria-hidden="true"
+>
+</div>
+
+<div
+  id="qrModal"
+  class="fixed z-[60] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden w-full max-w-md transform rounded-2xl bg-white p-8 shadow-2xl"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <button
+    id="closeModalButton"
+    class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+    aria-label="Cerrar modal"
+  >
+    <Icon name="heroicons:x-mark" class="h-6 w-6" />
+  </button>
+
+  <div class="flex flex-col items-center text-center">
+    <div class="mb-4 flex items-center space-x-3">
+      <img
+        class="h-12 w-12"
+        src="https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763148433/logo1_guhvc9.png"
+        alt="Logo D7GO"
+      />
+      <div>
+        <p class="text-left text-sm font-semibold text-gray-900">App D7GO</p>
+        <p class="text-left text-xs text-yellow-500">★★★★★</p>
+      </div>
+    </div>
+
+    <h2 class="mb-4 text-2xl font-bold text-gray-900">
+      Apunta la cámara de tu teléfono al código QR
+    </h2>
+    
+    <img
+      src="httpsAF_QR_CODE_URL_HERE.png"
+      alt="Código QR para descargar la app"
+      class="h-64 w-64 rounded-lg border"
+    />
+
+    <p class="mt-4 text-sm text-gray-600">
+      Escanea el código QR con la cámara de tu teléfono para descargar la app
+      D7GO.
+    </p>
+  </div>
+</div>
+
+{/* --- 4. SCRIPT MODIFICADO --- */}
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // --- Lógica del menú móvil (tu código original) ---
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -83,6 +146,46 @@ import { Icon } from 'astro-icon/components';
           mobileMenu.classList.add('hidden');
         });
       });
+    }
+
+    // --- Lógica del Modal (código nuevo) ---
+    const openModalButton = document.getElementById('openModalButton');
+    const openModalButtonMobile = document.getElementById(
+      'openModalButtonMobile',
+    );
+    const closeModalButton = document.getElementById('closeModalButton');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const qrModal = document.getElementById('qrModal');
+
+    const openModal = () => {
+      if (qrModal && modalOverlay) {
+        qrModal.classList.remove('hidden');
+        modalOverlay.classList.remove('hidden');
+        qrModal.setAttribute('aria-hidden', 'false');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+      }
+    };
+
+    const closeModal = () => {
+      if (qrModal && modalOverlay) {
+        qrModal.classList.add('hidden');
+        modalOverlay.classList.add('hidden');
+        qrModal.setAttribute('aria-hidden', 'true');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+      }
+    };
+
+    if (openModalButton) {
+      openModalButton.addEventListener('click', openModal);
+    }
+    if (openModalButtonMobile) {
+      openModalButtonMobile.addEventListener('click', openModal);
+    }
+    if (closeModalButton) {
+      closeModalButton.addEventListener('click', closeModal);
+    }
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', closeModal);
     }
   });
 </script>
