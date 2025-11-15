@@ -47,6 +47,18 @@ import Image from 'astro/components/Image.astro';
     />
   </head>
 
+  <a
+    href="https://wa.me/573001234567"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    />
+  </a>
+
   <body class="text-mono-black bg-white font-sans antialiased">
     <Navigation />
     <Hero />
@@ -74,7 +86,7 @@ import Image from 'astro/components/Image.astro';
           });
         }, observerOptions);
         const scrollFadeElements = document.querySelectorAll(
-          '.scroll-fade, .scroll-fade-up, .scroll-fade-down, .scroll-fade-left, .scroll-fade-right',
+          '.scroll-fade, .scroll-fade-up, .scroll-fade-down, .scroll-fade-left, .scroll-fade-right'
         );
         scrollFadeElements.forEach((el) => observer.observe(el));
       });
@@ -83,10 +95,11 @@ import Image from 'astro/components/Image.astro';
     <style>
       .background-image {
         background-image: url('https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763154178/Gemini_Generated_Image_4ddkiv4ddkiv4ddk_yksspn.png');
-        background-size: cover ;
+        background-size: cover;
         background-position: center;
         opacity: 0.8;
       }
     </style>
   </body>
+
 </html>

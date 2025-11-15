@@ -275,3 +275,31 @@
 .stagger-9 {
   transition-delay: 900ms;
 }
+
+
+
+.whatsapp-float {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+

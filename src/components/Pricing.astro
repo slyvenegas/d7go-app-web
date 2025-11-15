@@ -8,7 +8,6 @@ import { Icon } from 'astro-icon/components';
   class="border-mono-lighter bg-mono-lighter relative border-t-2 px-4 py-20 sm:px-6 lg:px-8"
 >
   <div class="relative mx-auto max-w-7xl">
-    {/* <-- Contenedor 'relative' principal */}
 
     {/* --- IMAGEN IZQUIERDA --- */}
     <img
@@ -30,7 +29,7 @@ import { Icon } from 'astro-icon/components';
       class="absolute top-1/4 right-4 left-4/7 z-0 hidden translate-x-1/2 rounded-xl shadow-2xl md:block"
     />
 
-    {/* --- Tu contenido de precios --- */}
+    {/* ---contenido de precios --- */}
     <div class="relative z-10">
       {/* <-- 'z-10' para estar sobre las imágenes 'z-0' */}
       <div class="scroll-fade-up mx-auto mb-16 max-w-3xl text-center">
@@ -61,6 +60,7 @@ import { Icon } from 'astro-icon/components';
                     <span class="text-mono-light">{plan.period}</span>
                   </div>
                   <p class="text-mono-light mb-6">{plan.description}</p>
+
                   <ul class="mb-8 space-y-4">
                     {plan.features.map((feature) => (
                       <li class="flex items-start">
@@ -72,13 +72,22 @@ import { Icon } from 'astro-icon/components';
                       </li>
                     ))}
                   </ul>
-                  {/* --- BOTÓN 'FEATURED' MODIFICADO --- */}
+
+                  {/* CTA Conductor (YA EXISTENTE) */}
                   <button
                     type="button"
-                    class="text-mono-black block w-full rounded-lg bg-white px-6 py-3 text-center font-semibold pricing-modal-trigger"
+                    class="text-mono-black block w-full rounded-lg bg-yellow-400 px-6 py-3 text-center font-semibold pricing-modal-trigger"
                   >
                     {plan.cta.text}
                   </button>
+
+                  {/* CTA NUEVO → PASAJERO */}
+                  {/* <button
+                    type="button"
+                    class="mt-4 block w-full rounded-lg bg-yellow-400 px-6 py-3 text-center font-semibold pricing-modal-trigger-passenger"
+                  >
+                    Descarga tu App
+                  </button> */}
                 </div>
               </div>
             ) : (
@@ -106,12 +115,21 @@ import { Icon } from 'astro-icon/components';
                     </li>
                   ))}
                 </ul>
-                {/* --- BOTÓN NORMAL MODIFICADO --- */}
-                <button
+
+                {/* CTA Conductor (ya existente) */}
+                {/* <button
                   type="button"
                   class="border-mono-black text-mono-black block w-full rounded-lg border-2 bg-white px-6 py-3 text-center font-semibold pricing-modal-trigger"
                 >
                   {plan.cta.text}
+                </button> */}
+
+                {/* CTA nuevo (Pasajero) */}
+                <button
+                  type="button"
+                  class="mt-4 block w-full rounded-lg bg-mono-black text-white px-6 py-3 text-center font-semibold pricing-modal-trigger-passenger"
+                >
+                  Descargar la App
                 </button>
               </div>
             ),
@@ -122,14 +140,15 @@ import { Icon } from 'astro-icon/components';
   </div>
 </section>
 
-{/* --- HTML Y SCRIPT DEL MODAL (Independiente) --- */}
+{/* ======================================================= */}
+{/*  MODAL CONDUCTOR (EL QUE YA FUNCIONABA)                */}
+{/* ======================================================= */}
 
 <div
   id="modalOverlayPricing"
   class="fixed inset-0 z-[55] hidden bg-black/60 backdrop-blur-sm"
   aria-hidden="true"
->
-</div>
+></div>
 
 <div
   id="qrModalPricing"
@@ -146,73 +165,123 @@ import { Icon } from 'astro-icon/components';
     <Icon name="heroicons:x-mark" class="h-6 w-6" />
   </button>
 
-  <div class="flex flex-col items-center text-center">
+  <div class="flex flex-col items-center text-center bg-gray-200">
     <div class="mb-4 flex items-center space-x-3">
-      <img
-        class="h-12 w-12"
+      <img class="h-12 w-22"
         src="https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763148433/logo1_guhvc9.png"
         alt="Logo D7GO"
       />
       <div>
-        <p class="text-left text-sm font-semibold text-gray-900">App D7GO</p>
+        <p class="text-left text-sm font-semibold text-gray-900">App D7GO Conductor</p>
         <p class="text-left text-xs text-yellow-500">★★★★★</p>
       </div>
     </div>
-    <h2 class="mb-4 text-2xl font-bold text-gray-900">
-      Apunta la cámara de tu teléfono al código QR
-    </h2>
-    
+
+    <h2 class="mb-4 text-2xl font-bold text-gray-900">Apunta la cámara de tu teléfono al código QR</h2>
+
     <img
       id="pricingModalQrImage"
-      src="https://URL_DE_TU_QR_1.png"  {/* <-- Ajustarás esto luego */}
-      alt="Código QR para descargar la app"
+      src="https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763229769/d7go-conductor-qr_luulvd.png"
+      alt="Código QR Conductor"
       class="h-64 w-64 rounded-lg border"
     />
-    <p class="mt-4 text-sm text-gray-600">
-      Escanea el código QR con la cámara de tu teléfono.
-    </p>
+
+    <p class="mt-4 text-sm text-gray-600">Escanea el código QR con la cámara.</p>
   </div>
 </div>
 
+{/* ======================================================= */}
+{/*  MODAL PASAJERO (NUEVO)                                */}
+{/* ======================================================= */}
+
+<div
+  id="modalOverlayPricingPassenger"
+  class="fixed inset-0 z-[55] hidden bg-black/60 backdrop-blur-sm"
+></div>
+
+<div
+  id="qrModalPricingPassenger"
+  class="fixed z-[60] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden w-full max-w-md transform rounded-2xl bg-white p-8 shadow-2xl"
+  aria-modal="true"
+  aria-hidden="true"
+>
+  <button
+    id="closeModalButtonPricingPassenger"
+    class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+  >
+    <Icon name="heroicons:x-mark" class="h-6 w-6" />
+  </button>
+
+  <div class="flex flex-col items-center text-center bg-gray-200">
+    <div class="mb-4 flex items-center space-x-3">
+      <img class="h-12 w-22"
+        src="https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763148433/logo1_guhvc9.png"
+        alt="Logo D7GO"
+      />
+      <div>
+        <p class="text-left text-sm font-semibold text-gray-900">App D7GO Pasajero</p>
+        <p class="text-left text-xs text-yellow-500">★★★★★</p>
+      </div>
+    </div>
+
+    <h2 class="mb-4 text-2xl font-bold text-gray-900">Escanea para descargar la app</h2>
+
+    <img
+      src="https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763229417/d7go-pasajero-qr_u9azos.png"
+      alt="Código QR Pasajero"
+      class="h-64 w-64 rounded-lg border"
+    />
+
+    <p class="mt-4 text-sm text-gray-600">Escanea el código QR con la cámara.</p>
+  </div>
+</div>
+
+{/* ======================================================= */}
+{/*  SCRIPT PARA AMBOS MODALES                              */}
+{/* ======================================================= */}
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // IDs y Clases únicos para este componente "Pricing"
+
+    // ========== CONDUCTOR ==========
     const modalTriggers = document.querySelectorAll('.pricing-modal-trigger');
-    const closeModalButton = document.getElementById('closeModalButtonPricing');
     const modalOverlay = document.getElementById('modalOverlayPricing');
     const qrModal = document.getElementById('qrModalPricing');
+    const closeModalButton = document.getElementById('closeModalButtonPricing');
 
     const openModal = () => {
-      if (qrModal && modalOverlay) {
-        qrModal.classList.remove('hidden');
-        modalOverlay.classList.remove('hidden');
-        qrModal.setAttribute('aria-hidden', 'false');
-        modalOverlay.setAttribute('aria-hidden', 'false');
-      }
+      qrModal.classList.remove('hidden');
+      modalOverlay.classList.remove('hidden');
     };
 
     const closeModal = () => {
-      if (qrModal && modalOverlay) {
-        qrModal.classList.add('hidden');
-        modalOverlay.classList.add('hidden');
-        qrModal.setAttribute('aria-hidden', 'true');
-        modalOverlay.setAttribute('aria-hidden', 'true');
-      }
+      qrModal.classList.add('hidden');
+      modalOverlay.classList.add('hidden');
     };
 
-    // Asigna el evento de abrir a CADA botón que tenga la clase
-    if (modalTriggers.length > 0) {
-      modalTriggers.forEach(trigger => {
-        trigger.addEventListener('click', openModal);
-      });
-    }
+    modalTriggers.forEach(trigger => trigger.addEventListener('click', openModal));
+    closeModalButton.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
 
-    // Asigna los eventos de cerrar
-    if (closeModalButton) {
-      closeModalButton.addEventListener('click', closeModal);
-    }
-    if (modalOverlay) {
-      modalOverlay.addEventListener('click', closeModal);
-    }
+    // ========== PASAJERO ==========
+    const modalTriggersPassenger = document.querySelectorAll('.pricing-modal-trigger-passenger');
+    const modalOverlayPassenger = document.getElementById('modalOverlayPricingPassenger');
+    const qrModalPassenger = document.getElementById('qrModalPricingPassenger');
+    const closeModalPassenger = document.getElementById('closeModalButtonPricingPassenger');
+
+    const openModalPassenger = () => {
+      qrModalPassenger.classList.remove('hidden');
+      modalOverlayPassenger.classList.remove('hidden');
+    };
+
+    const closeModalPassengerFunc = () => {
+      qrModalPassenger.classList.add('hidden');
+      modalOverlayPassenger.classList.add('hidden');
+    };
+
+    modalTriggersPassenger.forEach(btn => btn.addEventListener('click', openModalPassenger));
+    closeModalPassenger.addEventListener('click', closeModalPassengerFunc);
+    modalOverlayPassenger.addEventListener('click', closeModalPassengerFunc);
+
   });
 </script>

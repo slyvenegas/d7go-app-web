@@ -37,7 +37,7 @@ export const siteConfig = {
     links: [
       { name: 'Servicios', href: '#features' },
       { name: '¿Cómo Funciona?', href: '#how-it-works' },
-      { name: 'Precios', href: '#pricing' },
+      // { name: 'Precios', href: '#pricing' },
       // { name: 'FAQ', href: '#faq' },
     ],
     cta: {
@@ -118,9 +118,9 @@ export const siteConfig = {
   // PRICING
   // ============================================
   pricing: {
-    title: 'Planes claros y accesibles',
+    title: 'Dos Aplicaciones, una sola comunidad',
     subtitle:
-      'Escoge el plan que mejor se adapte a tus necesidades y comienza a disfrutar de viajes seguros y cómodos con D7GO App.',
+      'Escoge la que mejor se adapte a tus prioridades y comienza a disfrutar de viajes seguros y cómodos con D7GO App.',
     plans: [
       {
         name: 'D7GO Pasajero',
@@ -262,7 +262,7 @@ export const siteConfig = {
         title: 'Legal',
         links: [
           { name: 'Política de Privacidad', href: '#' },
-          { name: 'Términos de Servicio', href: '#' },
+          { name: 'Términos de Servicio', href: '/terminos' },
           { name: 'Política de Cookie', href: '#' },
           { name: 'Seguridad', href: '#' },
           // { name: 'Compliance', href: '#' },

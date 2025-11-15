@@ -1,0 +1,220 @@
+---
+import '../styles/globals.css';
+import { siteConfig } from '../config.ts';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Image from 'astro/components/Image.astro';
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{siteConfig.site.title}</title>
+    <meta name="description" content={siteConfig.site.description} />
+    <meta name="keywords" content={siteConfig.site.keywords} />
+
+    <meta property="og:title" content={siteConfig.site.ogTitle} />
+    <meta property="og:description" content={siteConfig.site.ogDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/screenshot.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content={siteConfig.site.twitterCard} />
+    <meta name="twitter:title" content={siteConfig.site.twitterTitle} />
+    <meta
+      name="twitter:description"
+      content={siteConfig.site.twitterDescription}
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a
+    href="https://wa.me/573001234567"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    />
+  </a>
+
+  <body class="text-mono-black bg-white font-sans antialiased">
+    <Navigation />
+
+    <section class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <h1 class="mb-8 text-center text-4xl font-bold">
+          <strong>Términos y Condiciones de Uso</strong>
+        </h1>
+
+        <article
+          class="prose prose-lg mx-auto space-y-6 rounded-xl bg-white/80 p-8 text-justify leading-relaxed shadow-lg backdrop-blur-sm"
+        >
+          <h2 class="font-bold">Última actualización: 15 Noviembre de 2025</h2>
+
+          <h3 class="font-bold">1. Aceptación de los Términos:</h3>
+          <p>
+            Al utilizar la aplicación o los servicios de D7GO, usted acepta quedar legalmente vinculado por estos Términos y Condiciones. Si no está de acuerdo, no utilice la plataforma.
+          </p>
+
+          <h3 class="font-bold">2. Naturaleza del servicio:</h3>
+          <p>
+            D7GO actúa exclusivamente como una plataforma tecnológica de intermediación entre usuarios que solicitan servicios de transporte y terceros independientes que los prestan. D7GO no es una empresa de transporte ni emplea directamente a los conductores.
+          </p>
+
+          <h3 class="font-bold">3. Registro de cuenta:</h3>
+          <p>
+            Para utilizar los servicios, los usuarios deben crear una cuenta, proporcionando información veraz, completa y actualizada. La confidencialidad de la cuenta y contraseña es responsabilidad del usuario.
+          </p>
+
+          <h3 class="font-bold">4. Conducta de los usuarios:</h3>
+          <p>
+            El usuario se compromete a:
+          </p>
+          <ul>
+            <li>No utilizar la plataforma para fines ilegales o no autorizados.</li>
+            <li>No acosar, dañar ni poner en riesgo a otros usuarios o conductores.</li>
+          </ul>
+
+          <h3 class="font-bold">5. Tarifas y pagos:</h3>
+          <p>
+            D7GO se reserva el derecho de aplicar tarifas por el uso de la plataforma y de modificar dichos valores en cualquier momento. Las tarifas del servicio de transporte son determinadas por los terceros conductores.
+          </p>
+
+          <h3 class="font-bold">6. Limitación de responsabilidad:</h3>
+          <p>
+            D7GO no será responsable por daños, pérdidas o accidentes ocurridos durante la prestación del servicio, ya que este es ejecutado por terceros independientes.
+          </p>
+
+          <h3 class="font-bold">7. Terminación del servicio:</h3>
+          <p>
+            D7GO puede suspender o cancelar cuentas de usuario que infrinjan estos términos o cometan conductas indebidas.
+          </p>
+
+          <h3 class="font-bold">8. Legislación aplicable:</h3>
+          <p>
+            Este acuerdo se rige por las leyes del país donde opera el servicio (Colombia, EE.UU., u otros), dependiendo de la jurisdicción correspondiente.
+          </p>
+
+          <h2 class="font-bold">Acuerdo de Licencia de Usuario Final (EULA) D7GO</h2>
+
+          <h3 class="font-bold">1. Licencia limitada:</h3>
+          <p>
+            D7GO le otorga una licencia no exclusiva, intransferible y revocable para usar la aplicación en dispositivos compatibles únicamente para fines personales y no comerciales.
+          </p>
+
+          <h3 class="font-bold">2. Propiedad intelectual:</h3>
+          <p>
+            Todos los derechos sobre la plataforma, el software, logotipos, diseños y contenidos pertenecen exclusivamente a D7GO o sus licenciantes.
+          </p>
+
+          <h3 class="font-bold">3. Restricciones:</h3>
+          <ul>
+            <li>Copiar, modificar o crear trabajos derivados.</li>
+            <li>Descompilar o realizar ingeniería inversa.</li>
+            <li>Utilizar la plataforma para ofrecer servicios similares.</li>
+          </ul>
+
+          <h3 class="font-bold">4. Actualizaciones:</h3>
+          <p>
+            D7GO podrá realizar actualizaciones automáticas o manuales sin previo aviso.
+          </p>
+
+          <h3 class="font-bold">5. Duración y terminación:</h3>
+          <p>
+            La licencia permanece vigente mientras el usuario cumpla con los términos. D7GO puede revocar la licencia en cualquier momento.
+          </p>
+
+          <h2 class="font-bold">Política de Privacidad D7GO</h2>
+
+          <h3 class="font-bold">1. Información que recolectamos:</h3>
+          <ul>
+            <li>Datos personales: nombre, teléfono, correo, ubicación.</li>
+            <li>Información del dispositivo.</li>
+            <li>Historial de viajes y pagos.</li>
+          </ul>
+
+          <h3 class="font-bold">2. Uso de la información:</h3>
+          <ul>
+            <li>Conectar conductores con pasajeros.</li>
+            <li>Mejorar la experiencia del usuario.</li>
+            <li>Procesar pagos y prevenir fraudes.</li>
+            <li>Cumplir con requisitos legales.</li>
+          </ul>
+
+          <h3 class="font-bold">3. Compartimos tu información con:</h3>
+          <ul>
+            <li>Conductores (solo lo necesario para el servicio).</li>
+            <li>Proveedores de pagos y tecnología.</li>
+            <li>Autoridades legales cuando sea requerido.</li>
+          </ul>
+
+          <h3 class="font-bold">4. Seguridad de datos:</h3>
+          <p>
+            Aplicamos medidas de seguridad, pero ningún sistema es 100% infalible.
+          </p>
+
+          <h3 class="font-bold">5. Derechos del usuario:</h3>
+          <p>
+            Puedes acceder, actualizar o eliminar tus datos escribiendo a: admin@d7gollc.com
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <Footer />
+
+    <div class="background-image fixed inset-0 -z-10"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -100px 0px',
+        };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+        const scrollFadeElements = document.querySelectorAll(
+          '.scroll-fade, .scroll-fade-up, .scroll-fade-down, .scroll-fade-left, .scroll-fade-right'
+        );
+        scrollFadeElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+
+    <style>
+      .background-image {
+        background-image: url('https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763154178/Gemini_Generated_Image_4ddkiv4ddkiv4ddk_yksspn.png');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+      }
+    </style>
+  </body>
+</html>

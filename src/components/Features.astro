@@ -18,13 +18,22 @@ const iconMap = {
 };
 ---
 
-<section id="features" class="relative bg-white px-4 py-20 sm:px-6 lg:px-8">
+<section
+  id="features"
+  class="features-background relative px-4 py-20 sm:px-6 lg:px-8"
+>
   <div
+
+
     class="border-mono-lighter absolute top-8 left-8 h-16 w-16 border-t-2 border-l-2"
+
   >
   </div>
   <div
+
+
     class="border-mono-lighter absolute top-8 right-8 h-16 w-16 border-t-2 border-r-2"
+
   >
   </div>
 
@@ -44,16 +53,34 @@ const iconMap = {
           <div
             class={`group ${index % 2 === 0 ? 'scroll-fade-left' : 'scroll-fade-right'} border-mono-lighter rounded-xl border p-8 stagger-${(index % 9) + 1}`}
           >
+                       {' '}
             <div class="feature-icon bg-mono-black mb-6 flex h-14 w-14 items-center justify-center rounded-lg text-white">
-              <Icon name={iconMap[feature.icon]} class="h-7 w-7" />
+                           {' '}
+              <Icon name={iconMap[feature.icon]} class="h-7 w-7" />         
+               {' '}
             </div>
+                       {' '}
             <h3 class="text-mono-black mb-3 text-xl font-semibold">
-              {feature.title}
+                            {feature.title}           {' '}
             </h3>
-            <p class="text-mono-dark leading-relaxed">{feature.description}</p>
+                       {' '}
+            <p class="text-mono-dark leading-relaxed">{feature.description}</p> 
+                   {' '}
           </div>
         ))
       }
     </div>
   </div>
 </section>
+
+<style>
+  .features-background {
+    /* Asegúrate de que este nombre coincida con el 
+      archivo que guardaste en tu carpeta /public 
+    */
+    background-image: url('https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763241107/banner_knqlq9.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
