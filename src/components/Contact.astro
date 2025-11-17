@@ -3,9 +3,50 @@ import { siteConfig } from '../config.ts';
 import { Icon } from 'astro-icon/components';
 ---
 
+<!-- Modal de Respuesta del Formulario -->
+<div
+  id="formResponseModal"
+  class="fixed inset-0 z-9999 hidden flex items-center justify-center bg-black/60 backdrop-blur-sm"
+>
+  <div
+    class="animate-fadeIn relative w-[90%] max-w-md rounded-xl bg-white p-8 text-center shadow-2xl"
+    id="formResponseContent"
+  >
+    <!-- Botón cerrar -->
+    <button
+      id="closeFormResponse"
+      class="absolute top-4 right-4 text-xl text-gray-500 hover:text-gray-700"
+    >
+      ✕
+    </button>
+
+    <!-- LOGO -->
+    <div class="mb-4 flex items-center justify-center space-x-3">
+      <img
+        class="h-12 w-22"
+        src="https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763148433/logo1_guhvc9.png"
+        alt="Logo D7GO"
+      />
+      <div>
+        <p class="text-left text-sm font-semibold text-gray-900">D7GO</p>
+        <p class="text-left text-xs text-yellow-500">★★★★★</p>
+      </div>
+    </div>
+
+    <!-- TÍTULO -->
+    <h2 id="formResponseTitle" class="mb-4 text-2xl font-bold text-gray-900">
+    </h2>
+
+    <!-- MENSAJE -->
+    <p id="formResponseMessage" class="text-sm text-gray-600"></p>
+  </div>
+</div>
+
+
+
 <section
   id="contact"
-  class="bg-mono-lighter relative px-4 py-20 sm:px-6 lg:px-8" {/* Se añadió 'relative' */}
+  class="bg-mono-lighter relative px-4 py-20 sm:px-6 lg:px-8"
   style="
     background-image: url('https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763154483/Gemini_Generated_Image_oadm76oadm76oadm_fd95kk.png');
     background-size: cover;
@@ -13,16 +54,16 @@ import { Icon } from 'astro-icon/components';
     background-repeat: no-repeat;
   "
 >
-  {/* Capa de superposición oscura para legibilidad */}
-  <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+  <div class="absolute inset-0 z-0 bg-black opacity-50"></div>
 
-  <div class="mx-auto max-w-7xl relative z-10"> {/* 'relative z-10' para que el contenido esté por encima */}
+  <div class="relative z-10 mx-auto max-w-7xl">
     <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
+      <!-- Left Column -->
       <div class="scroll-fade-left">
-        {/* --- Colores de texto cambiados a blanco/claro --- */}
-        <h2 class="text-white mb-6 text-4xl font-bold sm:text-5xl">
+        <h2 class="mb-6 text-4xl font-bold text-white sm:text-5xl">
           {siteConfig.contact.title}
         </h2>
+
         <p class="text-mono-light mb-8 text-xl leading-relaxed">
           {siteConfig.contact.subtitle}
         </p>
@@ -33,7 +74,7 @@ import { Icon } from 'astro-icon/components';
               <li class="flex items-center">
                 <Icon
                   name="heroicons:check"
-                  class="text-white mr-4 h-6 w-6 flex-shrink-0"
+                  class="mr-4 flex h-6 w-6 shrink-0 text-white"
                 />
                 <span class="text-mono-light">{benefit}</span>
               </li>
@@ -41,18 +82,20 @@ import { Icon } from 'astro-icon/components';
           }
         </ul>
 
-        <div class="border-white/30 border-t pt-8"> {/* Borde aclarado */}
+        <div class="border-t border-white/30 pt-8">
           <p class="text-mono-light mb-4 text-sm">
             ¿Tienes alguna pregunta? Escribe a nuestro equipo de soporte:
           </p>
           <a
             href={`mailto:${siteConfig.contact.email}`}
-            class="text-white font-semibold">{siteConfig.contact.email}</a
+            class="font-semibold text-white"
           >
+            {siteConfig.contact.email}
+          </a>
         </div>
       </div>
 
-      {/* --- Esta tarjeta de formulario 'bg-white' no necesita cambios --- */}
+      <!-- Right Column -->
       <div
         class="scroll-fade-right border-mono-lighter rounded-xl border bg-white p-8 shadow-lg"
       >
@@ -61,8 +104,9 @@ import { Icon } from 'astro-icon/components';
             <label
               for="name"
               class="text-mono-black mb-2 block text-sm font-semibold"
-              >{siteConfig.contact.form.fields.name.label}</label
             >
+              {siteConfig.contact.form.fields.name.label}
+            </label>
             <input
               type="text"
               id="name"
@@ -77,8 +121,9 @@ import { Icon } from 'astro-icon/components';
             <label
               for="email"
               class="text-mono-black mb-2 block text-sm font-semibold"
-              >{siteConfig.contact.form.fields.email.label}</label
             >
+              {siteConfig.contact.form.fields.email.label}
+            </label>
             <input
               type="email"
               id="email"
@@ -93,8 +138,9 @@ import { Icon } from 'astro-icon/components';
             <label
               for="company"
               class="text-mono-black mb-2 block text-sm font-semibold"
-              >{siteConfig.contact.form.fields.company.label}</label
             >
+              {siteConfig.contact.form.fields.company.label}
+            </label>
             <input
               type="text"
               id="company"
@@ -108,8 +154,9 @@ import { Icon } from 'astro-icon/components';
             <label
               for="message"
               class="text-mono-black mb-2 block text-sm font-semibold"
-              >{siteConfig.contact.form.fields.message.label}</label
             >
+              {siteConfig.contact.form.fields.message.label}
+            </label>
             <textarea
               id="message"
               name="message"
@@ -128,8 +175,10 @@ import { Icon } from 'astro-icon/components';
 
           <p class="text-mono-gray text-center text-xs leading-relaxed">
             Al enviar este formulario, aceptas nuestros
-            <a href="/terminos" class="underline">Terminos de Servicio</a> y
-            <a href="#" class="underline">Política de Privacidad </a>
+            <a href="/terminos" class="underline">Términos de Servicio</a> y
+            <a href="/politica-privacidad" class="underline"
+              >Política de Privacidad</a
+            >
           </p>
         </form>
       </div>
@@ -137,15 +186,73 @@ import { Icon } from 'astro-icon/components';
   </div>
 </section>
 
-<script>
+<script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
+    const modal = document.getElementById('formResponseModal');
+    const modalTitle = document.getElementById('formResponseTitle');
+    const modalMessage = document.getElementById('formResponseMessage');
+    const closeModalBtn = document.getElementById('closeFormResponse');
+    const modalContent = document.getElementById('formResponseContent');
+
+    function openModal(title, message) {
+      modalTitle.textContent = title;
+      modalMessage.textContent = message;
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+
+    // Cerrar con botón ✕
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Cerrar haciendo clic fuera
+    modal.addEventListener('click', (e) => {
+      if (!modalContent.contains(e.target)) closeModal();
+    });
+
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // -> Envío del formulario
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
+      contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch("https://formspree.io/f/xrbrnjld", {
+            method: "POST",
+            body: formData,
+            headers: {
+              "Accept": "application/json",
+            },
+          });
+
+          if (response.ok) {
+            openModal(
+              "Mensaje enviado con éxito",
+              "Gracias por contactarnos. Te responderemos muy pronto."
+            );
+            contactForm.reset();
+          } else {
+            openModal(
+              "Error al enviar",
+              "Hubo un problema al enviar el formulario. Por favor intenta nuevamente."
+            );
+          }
+        } catch (error) {
+          openModal(
+            "Error de conexión",
+            "No se pudo establecer conexión. Intenta más tarde."
+          );
+        }
       });
     }
   });
 </script>
+

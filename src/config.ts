@@ -12,8 +12,8 @@ export const siteConfig = {
     description:
       'D7GO App conecta pasajeros y conductores para ofrecer viajes seguros, cómodos y a precios justos. ¡Descarga la app y comienza tu viaje hoy mismo!',
     keywords:
-      'app de transporte, viajes seguros, conductores confiables, pasajeros satisfechos, D7GO, envíos, fletes, comida a domicilio',
-    email: 'soporte@d7gollc.com',
+      'app de transporte, viajes seguros, conductores confiables y pasajeros satisfechos.',
+    email: 'admin@d7gollc.com',
 
     // Open Graph / Twitter
     ogTitle: 'D7GO App',
@@ -53,7 +53,7 @@ export const siteConfig = {
     headline: 'Confiabilidad ',
     subheadline: 'al alcance de tu mano',
     description:
-      'Viajes justos por el precio que ambos acuerden. Precios justos en envíos, fletes y comida',
+      'Viajes justos por el precio que ambos acuerden. Precios justos y ambas partes satisfechas.',
     cta: {
       primary: {
         text: 'Descarga la App',
@@ -126,10 +126,10 @@ export const siteConfig = {
         name: 'D7GO Pasajero',
         price: '$0 COP',
         period: '/mes',
-        description: 'Perfecto para viajes y envíos.',
+        description: 'Perfecto para llegar a tiempo y cómodo.',
         features: [
           'Datos en tiempo real',
-          '+1,000 autos disponibles/día',
+          'Autos disponibles en cualquier momento',
           'Soporte básico 24/7',
           'Orden de servicio ilimitadas',
         ],
@@ -146,12 +146,12 @@ export const siteConfig = {
         description: 'Crece siendo partner de D7GO',
         badge: 'SÓLO PARA CONDUCTORES',
         features: [
-          'Seguro de viaje incluido',
-          'Hasta 15% comision-back por mes',
+          // 'Hasta 15% comision-back por mes',
           'Integraciones con otras App de ubicación',
           'Soporte Prioritario',
           'Monitoreo en tiempo real 24/7',
-          'Paga mediante transferencia bancaria',
+          'Recibe pagos seguros y certificados',
+          'Seguro de viaje incluido',
         ],
         cta: {
           text: 'Descarga tu App',
@@ -203,18 +203,18 @@ export const siteConfig = {
       'Cancela en cualquier momento',
       'Soporte al cliente 24/7',
     ],
-    email: 'soporte@d7gollc.com',
+    email: 'admin@d7gollc.com',
     form: {
       cta: 'Quiero saber más',
       fields: {
         name: {
           label: 'Nombre Completo',
-          placeholder: 'John Doe',
+          placeholder: 'Carlos Rodríguez',
           required: true,
         },
         email: {
           label: 'Correo Electrónico',
-          placeholder: 'john@company.com',
+          placeholder: 'correo@gmail.com',
           required: true,
         },
         company: {
@@ -243,8 +243,8 @@ export const siteConfig = {
         links: [
           { name: 'Viajes en la ciudad', href: '#features' },
           { name: 'Comisiones', href: '#features' },
-          { name: 'Localización en tiempo real', href: '#' },
-          { name: 'Envíos', href: '#' },
+          // { name: 'Localización en tiempo real', href: '#' },
+          // { name: 'Envíos', href: '#' },
           { name: '¿Por qué elegir D7GO?', href: '#' },
         ],
       },
@@ -252,7 +252,7 @@ export const siteConfig = {
         title: 'Algo más',
         links: [
           { name: 'Sobre Nosotros', href: '#' },
-          { name: 'Blog', href: '#' },
+          // { name: 'Blog', href: '#' },
           { name: 'Colaboraciones', href: '#' },
           { name: '¿Tienes sugerencias?', href: '#contact' },
           // { name: 'Contact', href: '#contact' },
@@ -261,10 +261,10 @@ export const siteConfig = {
       {
         title: 'Legal',
         links: [
-          { name: 'Política de Privacidad', href: '#' },
+          { name: 'Política de Privacidad', href: '/politica-privacidad' },
           { name: 'Términos de Servicio', href: '/terminos' },
-          { name: 'Política de Cookie', href: '#' },
-          { name: 'Seguridad', href: '#' },
+          { name: 'Manejo de Cookies', href: '/cookies' },
+          // { name: 'Seguridad', href: '#' },
           // { name: 'Compliance', href: '#' },
         ],
       },

@@ -1,0 +1,171 @@
+---
+import '../styles/globals.css';
+import { siteConfig } from '../config.ts';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{siteConfig.site.title}</title>
+    <meta name="description" content={siteConfig.site.description} />
+    <meta name="keywords" content={siteConfig.site.keywords} />
+
+    <meta property="og:title" content={siteConfig.site.ogTitle} />
+    <meta property="og:description" content={siteConfig.site.ogDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/screenshot.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content={siteConfig.site.twitterCard} />
+    <meta name="twitter:title" content={siteConfig.site.twitterTitle} />
+    <meta
+      name="twitter:description"
+      content={siteConfig.site.twitterDescription}
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a
+    href="https://wa.me/573001234567"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    />
+  </a>
+
+  <body class="text-mono-black bg-white font-sans antialiased">
+    <Navigation />
+
+    <section class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <h1 class="mb-8 text-center text-4xl font-bold">
+          <strong>Política de Privacidad</strong>
+        </h1>
+
+        <article
+          class="prose prose-lg mx-auto space-y-6 rounded-xl bg-white/80 p-8 text-justify leading-relaxed shadow-lg backdrop-blur-sm"
+        >
+          <h2 class="font-bold">Última actualización: 17 Noviembre de 2025</h2>
+
+          <h3 class="font-bold">1. Introducción</h3>
+          <p>
+            Esta Política de Privacidad describe cómo D7GO App, operando en Colombia, recopila, usa, protege y comparte la información proporcionada por los usuarios que utilizan nuestros servicios de movilidad y transporte para pasajeros y conductores.
+          </p>
+
+          <h3 class="font-bold">2. Información que recopilamos</h3>
+          <p>Recolectamos la siguiente información cuando usas nuestra app:</p>
+
+          <ul>
+            <li><strong>Datos personales:</strong> nombre, número de teléfono, correo electrónico.</li>
+            <li><strong>Datos de ubicación:</strong> ubicación en tiempo real para asignación de viajes y seguridad.</li>
+            <li><strong>Datos del viaje:</strong> historial de viajes, rutas y horarios.</li>
+            <li><strong>Datos del vehículo (conductores):</strong> placa, modelo, documentos asociados.</li>
+            <li><strong>Métodos de pago:</strong> información necesaria para pagos con Nequi, Bancolombia, Daviplata o efectivo.</li>
+            <li><strong>Datos del dispositivo:</strong> sistema operativo, identificadores únicos, IP aproximada.</li>
+          </ul>
+
+          <h3 class="font-bold">3. Cómo usamos la información</h3>
+          <p>Utilizamos tu información para los siguientes fines:</p>
+
+          <ul>
+            <li>Operar y mejorar la plataforma D7GO.</li>
+            <li>Conectar pasajeros con conductores de forma eficiente y segura.</li>
+            <li>Calcular tarifas y procesar pagos.</li>
+            <li>Proteger a los usuarios mediante verificación, monitoreo de viajes y prevención de fraudes.</li>
+            <li>Cumplir con obligaciones legales en Colombia.</li>
+          </ul>
+
+          <h3 class="font-bold">4. Compartimos tu información con:</h3>
+          <ul>
+            <li><strong>Conductores:</strong> nombre, ubicación, punto de recogida y destino del pasajero.</li>
+            <li><strong>Pasajeros:</strong> nombre del conductor, foto, vehículo, placa y ubicación.</li>
+            <li><strong>Proveedores de servicios:</strong> plataformas de pago, servicios tecnológicos y seguridad.</li>
+            <li><strong>Autoridades:</strong> cuando sea requerido por ley en Colombia.</li>
+          </ul>
+
+          <h3 class="font-bold">5. Seguridad de la información</h3>
+          <p>
+            Implementamos medidas técnicas y administrativas para proteger los datos. Sin embargo, ningún sistema digital es completamente seguro, y no podemos garantizar seguridad absoluta.
+          </p>
+
+          <h3 class="font-bold">6. Retención de datos</h3>
+          <p>
+            Conservamos la información solo durante el tiempo necesario para prestar el servicio, cumplir obligaciones legales y resolver disputas.
+          </p>
+
+          <h3 class="font-bold">7. Tus derechos como usuario</h3>
+          <p>Como usuario en Colombia, tienes derecho a:</p>
+
+          <ul>
+            <li>Acceder a tus datos personales.</li>
+            <li>Actualizar o corregir información inexacta.</li>
+            <li>Solicitar eliminación de tu cuenta y datos.</li>
+            <li>Revocar permisos de ubicación desde tu dispositivo.</li>
+          </ul>
+
+          <p>
+            Para ejercer tus derechos, escríbenos a:<br />
+            <strong>admin@d7gollc.com</strong>
+          </p>
+
+          <h3 class="font-bold">8. Cambios en esta Política de Privacidad</h3>
+          <p>
+            Podemos actualizar esta política en cualquier momento. Las modificaciones entrarán en vigor cuando se publiquen en esta página.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <Footer />
+
+    <div class="background-image fixed inset-0 -z-10"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -100px 0px',
+        };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+        const scrollFadeElements = document.querySelectorAll(
+          '.scroll-fade, .scroll-fade-up, .scroll-fade-down, .scroll-fade-left, .scroll-fade-right'
+        );
+        scrollFadeElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+
+    <style>
+      .background-image {
+        background-image: url('https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763154178/Gemini_Generated_Image_4ddkiv4ddkiv4ddk_yksspn.png');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+      }
+    </style>
+  </body>
+</html>

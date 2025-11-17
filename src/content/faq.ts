@@ -1,32 +1,32 @@
 export const faqItems = [
   {
-    question: 'He cambiado mi número de teléfono, ahora no puedo iniciar sesión en mi cuenta',
+    question: 'Cambié mi número de teléfono y ahora no puedo acceder a mi cuenta',
     answer:
-      'Contáctanos en la app o envía un correo electrónico a support@d7go.com, cuéntanos cuál es el problema y danos el antiguo número de teléfono que estaba vinculado a tu cuenta de D7GO.',
+      'Ponte en contacto con nosotros desde la app o escribe a admin@d7gollc.com. Explícanos lo sucedido e indícanos el número anterior que estaba asociado a tu cuenta de D7GO.',
   },
   {
-    question: '¿Cómo cambio mi foto de perfil en D7GO?',
+    question: '¿De qué manera puedo actualizar mi foto de perfil en D7GO?',
     answer:
-      'Envía una solicitud junto con la nueva foto a support@d7go.com desde tu cuenta personal e incluye tu nombre completo.',
+      'Envía un mensaje a admin@d7gollc.com desde tu cuenta personal adjuntando la nueva fotografía y tu nombre completo.',
   },
   {
-    question: '¿Cómo funciona el sistema de tarifas en D7GO?',
+    question: '¿Cómo se determina el costo de un viaje en D7GO?',
     answer:
-      'El precio del viaje se calcula según la distancia, el tiempo estimado y la demanda en el momento. Antes de confirmar, siempre podrás ver el valor total y decidir si aceptas o no el viaje.',
+      'La tarifa se calcula en función de la distancia, el tiempo estimado y el nivel de demanda en ese momento. Antes de confirmar, siempre podrás ver el precio final y decidir si deseas continuar.',
   },
   {
-    question: '¿Qué debo hacer si un conductor o pasajero no se presenta?',
+    question: '¿Qué hago si el conductor o el pasajero no aparece?',
     answer:
-      'Si el conductor o pasajero no llega después de un tiempo razonable, puedes cancelar el viaje sin penalización desde la app. Nuestro equipo revisará la situación para garantizar una buena experiencia para ambas partes.',
+      'Si después de esperar un tiempo razonable la otra persona no llega, puedes cancelar el viaje sin cargos desde la app. Nuestro equipo analizará el caso para asegurar una buena experiencia para ambos usuarios.',
   },
   {
-    question: '¿Cómo elimino mi cuenta de D7GO?',
+    question: '¿Cuál es el proceso para borrar mi cuenta de D7GO?',
     answer:
-      'Envía un escaneo de la solicitud de eliminación de cuenta en cualquier formato a support@d7go.com. Si tienes saldo sin usar en tu cuenta personal, adjunta una solicitud de reembolso del monto restante junto con tu información bancaria.',
+      'Envía un documento escaneado solicitando la eliminación de tu cuenta a admin@d7gollc.com. Si tienes saldo disponible, incluye también una petición de reembolso con tus datos bancarios.',
   },
   {
-    question: '¿Cómo puedo contactar al soporte de D7GO?',
+    question: '¿Cuál es la forma de comunicarme con el soporte de D7GO?',
     answer:
-      'Puedes comunicarte con nosotros directamente desde la app en la sección “Ayuda”, o escribirnos a support@d7go.com. Nuestro equipo de atención está disponible las 24 horas para ayudarte.',
+      'Puedes escribirnos directamente desde la sección “Ayuda” dentro de la app o enviarnos un correo a admin@d7gollc.com. Nuestro equipo de soporte está disponible las 24 horas para asistirte.',
   },
 ];

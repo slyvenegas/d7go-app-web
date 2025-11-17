@@ -122,7 +122,6 @@ import { Icon } from 'astro-icon/components';
   </div>
 </div>
 
-{/* --- 4. SCRIPT MODIFICADO --- */}
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // --- Lógica del menú móvil (tu código original) ---
@@ -148,11 +147,9 @@ import { Icon } from 'astro-icon/components';
       });
     }
 
-    // --- Lógica del Modal (código nuevo) ---
+    // --- Lógica del Modal ---
     const openModalButton = document.getElementById('openModalButton');
-    const openModalButtonMobile = document.getElementById(
-      'openModalButtonMobile',
-    );
+    const openModalButtonMobile = document.getElementById('openModalButtonMobile');
     const closeModalButton = document.getElementById('closeModalButton');
     const modalOverlay = document.getElementById('modalOverlay');
     const qrModal = document.getElementById('qrModal');
@@ -187,5 +184,12 @@ import { Icon } from 'astro-icon/components';
     if (modalOverlay) {
       modalOverlay.addEventListener('click', closeModal);
     }
+
+    // --- ⭐ NUEVO: Cerrar modal con tecla ESC ---
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
   });
 </script>

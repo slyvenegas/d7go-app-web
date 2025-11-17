@@ -3,54 +3,54 @@ export const featuresContent = [
     icon: 'lightning',
     title: 'Viajes en la ciudad',
     description:
-      'Viajes buenos a un precio justo para pasajeros y conductores',
+      'Traslados cómodos y accesibles para pasajeros y conductores, siempre a un precio equilibrado.',
   },
   {
     icon: 'code',
-    title: 'Envíos',
+    title: 'Seguridad del pasajero',
     description:
-      'Seamlessly connect with your tools: Slack, email, databases, APIs, and 1000+ platforms.',
+      'Accede a información clara y en tiempo real sobre tu viaje: datos del conductor, vehículo, ruta y opciones de contacto para que siempre te sientas seguro durante cada recorrido.',
   },
   {
     icon: 'chart',
     title: 'Localización en tiempo real',
     description:
-      'Monitoree su paquete y su propio viaje o comparta su ubicación real a sus amigos',
+      'Sigue tu trayecto en directo, o comparte tu ubicación exacta con tus contactos.',
   },
   {
     icon: 'chat',
     title: 'Plan Wheel',
     description:
-      'Conduce con nosotros bajo tus propios términos. Comisiones justas para conductores.',
+      'Conduce con total autonomía. Comisiones transparentes y justas para nuestros conductores.',
   },
   {
     icon: 'banknotes',
-    title: 'Cobertura Empresarial',
+    title: 'Tarifas competitivas',
     description:
-      'Precios justos en envíos, fletes y comida', 
+      'Tarifas óptimas en servicios de entrega, transporte de carga y pedidos de comida.',
   },
   {
     icon: 'clock',
     title: '24/7 Soporte',
     description:
-      'Soporte personalizado y continuo las 24 horas del día, toda la semana.',
+      'Atención personalizada en cualquier momento, disponible los siete días de la semana.',
   },
   {
     icon: 'layers',
     title: 'Control de precios',
     description:
-      'Ofrece tu propio precio si no te gusta la oferta inicial del pasajero.',
+      'Propón tu propio valor si la tarifa inicial del pasajero no te convence.',
   },
   {
     icon: 'key',
     title: 'Libertad para elegir',
     description:
-      'Omite tantas solicitudes de viaje como quieras, sin penalizaciones. Experimenta la libertad de un horario de trabajo flexible',
+      'Rechaza todas las solicitudes de viaje que desees sin recibir sanciones. Disfruta de un horario flexible y a tu ritmo.',
   },
   {
     icon: 'zap',
     title: 'Crecimiento escalable',
     description:
-      'Expande tu negocio con soluciones personalizadas en logística que se adaptan a tus necesidades. ',
+      'Haz crecer tu operación con soluciones logísticas personalizadas que se ajustan a tus requerimientos.',
   },
 ];

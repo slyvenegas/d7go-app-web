@@ -1,0 +1,177 @@
+---
+import '../styles/globals.css';
+import { siteConfig } from '../config.ts';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{siteConfig.site.title}</title>
+    <meta name="description" content={siteConfig.site.description} />
+    <meta name="keywords" content={siteConfig.site.keywords} />
+
+    <meta property="og:title" content={siteConfig.site.ogTitle} />
+    <meta property="og:description" content={siteConfig.site.ogDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/screenshot.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content={siteConfig.site.twitterCard} />
+    <meta name="twitter:title" content={siteConfig.site.twitterTitle} />
+    <meta
+      name="twitter:description"
+      content={siteConfig.site.twitterDescription}
+    />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a
+    href="https://wa.me/573001234567"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+    />
+  </a>
+
+  <body class="text-mono-black bg-white font-sans antialiased">
+    <Navigation />
+
+    <section class="px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <h1 class="mb-8 text-center text-4xl font-bold">
+          <strong>Política de Cookies</strong>
+        </h1>
+
+        <article
+          class="prose prose-lg mx-auto space-y-6 rounded-xl bg-white/80 p-8 text-justify leading-relaxed shadow-lg backdrop-blur-sm"
+        >
+          <h2 class="font-bold">Última actualización: 17 Noviembre de 2025</h2>
+
+          <h3 class="font-bold">1. ¿Qué son las cookies?</h3>
+          <p>
+            Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando visitas nuestro sitio web. Sirven para mejorar tu experiencia, recordar tus preferencias y permitir que ciertas funciones operen correctamente. No representan un riesgo de seguridad ni permiten identificarte directamente.
+          </p>
+
+          <h3 class="font-bold">2. Tipos de cookies que utilizamos</h3>
+          <p>En D7GO App usamos las siguientes categorías:</p>
+
+          <ul>
+            <li>
+              <strong>Cookies estrictamente necesarias:</strong>
+              Permiten que el sitio funcione correctamente. Incluyen inicio de sesión, seguridad y carga del contenido. No pueden desactivarse desde la plataforma.
+            </li>
+
+            <li>
+              <strong>Cookies de rendimiento:</strong>
+              Nos ayudan a conocer cómo navegan los usuarios por el sitio para mejorar velocidad, diseño y funcionalidad.
+            </li>
+
+            <li>
+              <strong>Cookies de funcionalidad:</strong>
+              Guardan preferencias como idioma, región y configuraciones que mejoran tu experiencia.
+            </li>
+
+            <li>
+              <strong>Cookies de análisis:</strong>
+              Herramientas como Google Analytics (si aplica) que permiten medir uso, errores y optimización del sitio.
+            </li>
+          </ul>
+
+          <h3 class="font-bold">3. Cookies de terceros</h3>
+          <p>
+            Algunos proveedores externos pueden colocar sus propias cookies cuando interactúas con nuestro sitio, por ejemplo:
+          </p>
+          <ul>
+            <li>Google (Analytics, Maps, fonts, etc.)</li>
+            <li>Plataformas de pago si son embebidas</li>
+            <li>Servicios de seguridad o infraestructura</li>
+          </ul>
+
+          <p>
+            Estas cookies están sujetas a las políticas de dichos proveedores.
+          </p>
+
+          <h3 class="font-bold">4. Cómo puedes controlar o desactivar cookies</h3>
+          <p>
+            Puedes gestionar tus preferencias de cookies desde la configuración de tu navegador. Dependiendo del navegador, puedes:
+          </p>
+
+          <ul>
+            <li>Bloquear todas las cookies.</li>
+            <li>Eliminar cookies existentes.</li>
+            <li>Permitir solo cookies esenciales.</li>
+          </ul>
+
+          <p>
+            Ten en cuenta que desactivar algunas cookies puede afectar el funcionamiento del sitio.
+          </p>
+
+          <h3 class="font-bold">5. Cambios a esta Política de Cookies</h3>
+          <p>
+            D7GO puede actualizar esta política en cualquier momento para reflejar cambios legales o mejoras internas. La fecha indicada arriba mostrará la última actualización.
+          </p>
+
+          <h3 class="font-bold">6. Contacto</h3>
+          <p>
+            Si tienes dudas sobre esta Política de Cookies, puedes escribirnos a:<br />
+            <strong>admin@d7gollc.com</strong>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <Footer />
+
+    <div class="background-image fixed inset-0 -z-10"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -100px 0px',
+        };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+
+        const scrollFadeElements = document.querySelectorAll(
+          '.scroll-fade, .scroll-fade-up, .scroll-fade-down, .scroll-fade-left, .scroll-fade-right'
+        );
+
+        scrollFadeElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+
+    <style>
+      .background-image {
+        background-image: url('https://res.cloudinary.com/ddqgjf5wr/image/upload/v1763154178/Gemini_Generated_Image_4ddkiv4ddkiv4ddk_yksspn.png');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.8;
+      }
+    </style>
+  </body>
+</html>

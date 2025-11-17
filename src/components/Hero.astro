@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <section
-  class="mono-mesh to-mono-lighter relative bg-gradient-to-b from-white px-4 pt-32 pb-20 sm:px-6 lg:px-8"
+  class="mono-mesh to-mono-lighter relative bg-linear-to-b from-white px-4 pt-32 pb-20 sm:px-6 lg:px-8"
 >
   <div class="bg-mono-black absolute top-32 left-0 h-32 w-1"></div>
   <div class="bg-mono-black absolute top-32 right-0 h-32 w-1"></div>
@@ -25,7 +25,7 @@ import { Icon } from 'astro-icon/components';
       <div
         class="scroll-fade-up mb-16 flex flex-col justify-center gap-4 sm:flex-row"
       >
-        {/* --- 2. BOTÓN CTA MODIFICADO --- */}
+
         <button
           id="openModalButtonHero"
           type="button"
@@ -61,18 +61,17 @@ import { Icon } from 'astro-icon/components';
   </div>
 </section>
 
-{/* --- 3. HTML Y SCRIPT DEL MODAL (Independiente) --- */}
 
 <div
   id="modalOverlayHero"
-  class="fixed inset-0 z-[55] hidden bg-black/60 backdrop-blur-sm"
+  class="fixed inset-0 z-55 hidden bg-black/60 backdrop-blur-sm"
   aria-hidden="true"
 >
 </div>
 
 <div
   id="qrModalHero"
-  class="fixed z-[60] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden w-full max-w-md transform rounded-2xl bg-white p-8 shadow-2xl"
+  class="fixed z-60 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden w-full max-w-md transform rounded-2xl bg-white p-8 shadow-2xl"
   role="dialog"
   aria-modal="true"
   aria-hidden="true"
@@ -150,5 +149,11 @@ import { Icon } from 'astro-icon/components';
     if (modalOverlay) {
       modalOverlay.addEventListener('click', closeModal);
     }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
   });
 </script>
