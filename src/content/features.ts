@@ -19,7 +19,7 @@ export const featuresContent = [
   },
   {
     icon: 'chat',
-    title: 'Plan Wheel',
+    title: 'Plan D7GO',
     description:
       'Conduce con total autonomía. Comisiones transparentes y justas para nuestros conductores.',
   },

@@ -13,7 +13,7 @@ export const siteConfig = {
       'D7GO App conecta pasajeros y conductores para ofrecer viajes seguros, cómodos y a precios justos. ¡Descarga la app y comienza tu viaje hoy mismo!',
     keywords:
       'app de transporte, viajes seguros, conductores confiables y pasajeros satisfechos.',
-    email: 'admin@d7gollc.com',
+    email: 'd7gocolombia@gmail.com',
 
     // Open Graph / Twitter
     ogTitle: 'D7GO App',
@@ -203,7 +203,7 @@ export const siteConfig = {
       'Cancela en cualquier momento',
       'Soporte al cliente 24/7',
     ],
-    email: 'admin@d7gollc.com',
+    email: 'd7gocolombia@gmail.com',
     form: {
       cta: 'Quiero saber más',
       fields: {
